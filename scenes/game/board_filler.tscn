@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj5ahlp2bguju"]
+
+[ext_resource type="Script" uid="uid://do2pi3tk8sls0" path="res://scripts/game/board_filler.gd" id="1_yq2fa"]
+
+[node name="BoardFiller" type="Node"]
+script = ExtResource("1_yq2fa")

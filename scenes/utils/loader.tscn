@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbdo6g3h2svxu"]
+
+[ext_resource type="Shader" uid="uid://c1ddx7mnge61b" path="res://resources/shaders/halo.gdshader" id="1_26fl0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_puvn7"]
+shader = ExtResource("1_26fl0")
+shader_parameter/enabled = true
+shader_parameter/halo_color = Color(0.47712106, 0.83090425, 0.57274127, 1)
+shader_parameter/radius = 0.46700001892262
+shader_parameter/offset = -0.12499998218750002
+shader_parameter/width = 0.0010000000475
+shader_parameter/softness = 0.04
+shader_parameter/speed = 1.2
+shader_parameter/phase = 0.0
+shader_parameter/tail_length = 0.25
+shader_parameter/head_boost = 2.5
+shader_parameter/tail_falloff = 1.8
+shader_parameter/pulse_speed = 1.5
+shader_parameter/pulse_amount = 0.15
+shader_parameter/shine_intensity = 1.5
+shader_parameter/shimmer_speed = 2.0
+shader_parameter/shimmer_amount = 0.3
+shader_parameter/inner_ring_enabled = true
+shader_parameter/inner_ring_offset = 0.00800000038
+shader_parameter/inner_ring_width = 0.0010000000475
+shader_parameter/inner_ring_brightness = 1.45600006916
+shader_parameter/glow_size = 0.1570000074575
+shader_parameter/glow_intensity = 0.2910000138225
+
+[node name="Loader" type="ColorRect"]
+material = SubResource("ShaderMaterial_puvn7")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.41235
+offset_top = -205.0
+offset_right = 88.41235
+offset_bottom = -28.175293
+grow_horizontal = 2
+grow_vertical = 0

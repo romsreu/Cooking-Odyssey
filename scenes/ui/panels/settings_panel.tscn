@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctjj4lxb71qm6"]
+
+[ext_resource type="Theme" uid="uid://3g4eqhugjyk1" path="res://resources/themes/roarc_theme.tres" id="1_qe5rj"]
+
+[node name="SettingsPanel" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = -363.0
+offset_right = 329.0
+offset_bottom = 363.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qe5rj")

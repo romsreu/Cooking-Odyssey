@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://duv1di2pw13tf"]
+
+[ext_resource type="Script" uid="uid://t4dm7fag7rk6" path="res://scripts/ui_elements/buttons/general_buttons/settings_button.gd" id="1_0weel"]
+[ext_resource type="Texture2D" uid="uid://dcuaierw74fcg" path="res://assets/images/ui/buttons/base/SettingsButton.png" id="1_gbldm"]
+
+[node name="SettingsButton" type="Button"]
+offset_right = 77.0
+offset_bottom = 81.191536
+icon = ExtResource("1_gbldm")
+flat = true
+expand_icon = true
+script = ExtResource("1_0weel")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxw8m12vqma3v"]
+
+[ext_resource type="Theme" uid="uid://3g4eqhugjyk1" path="res://resources/themes/roarc_theme.tres" id="1_qdswt"]
+[ext_resource type="Script" uid="uid://bun2ino33quuo" path="res://scripts/systems/level_selector.gd" id="2_lrdyg"]
+[ext_resource type="PackedScene" uid="uid://dxgnn0qotvw3u" path="res://scenes/systems/vertical_scroll_container.tscn" id="3_lrdyg"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qdswt")
+script = ExtResource("2_lrdyg")
+levels_amount = 50
+metadata/_edit_vertical_guides_ = [240.0, 480.0]
+
+[node name="VerticalScrollContainer" parent="." instance=ExtResource("3_lrdyg")]
+layout_mode = 1
+inertia_friction = 0.93
+
+[node name="LevelsContainer" type="Control" parent="VerticalScrollContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LevelsPathMain" type="Line2D" parent="VerticalScrollContainer/LevelsContainer"]
+position = Vector2(406.5, 547)
+width = 60.0
+joint_mode = 2
+
+[connection signal="resized" from="." to="." method="_on_resized"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://87aw3k7nkgyt"]
+
+[ext_resource type="Script" uid="uid://dyc0o4vxtgss3" path="res://scripts/game/game_grid.gd" id="1_admqo"]
+[ext_resource type="PackedScene" uid="uid://bp0umyv5eew37" path="res://scenes/game/match_detector.tscn" id="2_0t1sm"]
+[ext_resource type="Shader" uid="uid://cfs2lvvl48j0h" path="res://resources/shaders/matches/bomb.gdshader" id="3_3lnem"]
+[ext_resource type="Script" uid="uid://cxlijaob7nskg" path="res://scenes/game/elements/fx_layer.gd" id="3_yxnbg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxnbg"]
+shader = ExtResource("3_3lnem")
+shader_parameter/progress = 0.0
+
+[sub_resource type="Gradient" id="Gradient_yh0d5"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xfkqu"]
+gradient = SubResource("Gradient_yh0d5")
+
+[node name="GameGrid" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_admqo")
+
+[node name="MatchDetector" parent="." instance=ExtResource("2_0t1sm")]
+
+[node name="FxLayer" type="Node2D" parent="."]
+script = ExtResource("3_yxnbg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_yxnbg")
+layout_mode = 0
+offset_left = 326.0
+offset_top = 163.0
+offset_right = 582.0
+offset_bottom = 341.0
+texture = SubResource("GradientTexture1D_xfkqu")

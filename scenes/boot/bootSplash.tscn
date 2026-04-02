@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1jx85b78w4k0"]
+
+[ext_resource type="Texture2D" uid="uid://bfi2h266l87es" path="res://assets/images/boot/ROARC_logo.png" id="1_otbbq"]
+[ext_resource type="Script" uid="uid://b55mqj3mi5xuh" path="res://scripts/boot/boot_splash.gd" id="1_puvn7"]
+[ext_resource type="PackedScene" uid="uid://dbdo6g3h2svxu" path="res://scenes/utils/loader.tscn" id="3_puvn7"]
+[ext_resource type="Texture2D" uid="uid://b1b0v1acjyfge" path="res://assets/icons/icon_monochrome_dark.png" id="5_dho4i"]
+[ext_resource type="Script" uid="uid://dravjrqd7y3ri" path="res://addons/AdmobPlugin/Admob.gd" id="5_malkm"]
+[ext_resource type="FontFile" uid="uid://thje76qcvh0d" path="res://assets/fonts/Raleway-VariableFont_wght.ttf" id="5_y37fu"]
+
+[node name="BootSplash" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_puvn7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.043137256, 0.023529412, 0.08627451, 1)
+
+[node name="Loader" parent="." instance=ExtResource("3_puvn7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -93.0
+offset_right = 15.824707
+offset_bottom = 83.82471
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -45.5
+offset_right = 175.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_otbbq")
+
+[node name="Admob" type="Node" parent="."]
+script = ExtResource("5_malkm")
+banner_position = 1
+banner_size = 3
+banner_anchor_to_safe_area = true
+android_debug_application_id = "ca-app-pub-3940256099942544~3347511713"
+metadata/_custom_type_script = "uid://dravjrqd7y3ri"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = 51.0
+offset_right = 121.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_y37fu")
+theme_override_font_sizes/font_size = 30
+text = "POWERED BY"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+modulate = Color(18.892157, 18.892157, 18.892157, 0.13333334)
+custom_minimum_size = Vector2(40, 25)
+layout_mode = 2
+texture = ExtResource("5_dho4i")
+expand_mode = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://byqy2vb6vdd5q"]
+
+[ext_resource type="Texture2D" uid="uid://ujgx8dkch6xo" path="res://assets/images/ui/buttons/base/VibrationToggleButton.png" id="1_hkt5n"]
+[ext_resource type="Script" uid="uid://dicubfu3yxy5a" path="res://scripts/ui_elements/buttons/toggle_buttons/toggle_vibration_button.gd" id="2_hkt5n"]
+
+[node name="VibrationButton" type="Button"]
+offset_right = 125.0
+offset_bottom = 132.0
+toggle_mode = true
+icon = ExtResource("1_hkt5n")
+flat = true
+expand_icon = true
+script = ExtResource("2_hkt5n")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvynscikt21e0"]
+
+[ext_resource type="Theme" uid="uid://3g4eqhugjyk1" path="res://resources/themes/roarc_theme.tres" id="1_t7e7n"]
+[ext_resource type="Script" uid="uid://clq74ctc4qu8i" path="res://scripts/settings/audio_settings.gd" id="2_m1t4u"]
+[ext_resource type="PackedScene" uid="uid://d2cxucfjkoc7" path="res://scenes/ui/sliders/slider.tscn" id="3_fgvxa"]
+[ext_resource type="FontFile" uid="uid://veolll0076aj" path="res://assets/fonts/go3v2.ttf" id="4_rvtqk"]
+
+[node name="AudioSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -338.5
+offset_right = 228.5
+offset_bottom = 338.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t7e7n")
+script = ExtResource("2_m1t4u")
+
+[node name="MusicSlider" parent="." instance=ExtResource("3_fgvxa")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = -62.0
+offset_right = 198.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MusicLabel" type="Label" parent="MusicSlider"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.5
+offset_top = -61.0
+offset_right = 60.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_rvtqk")
+theme_override_font_sizes/font_size = 45
+text = "MUSIC"
+
+[node name="SFXSlider" parent="." instance=ExtResource("3_fgvxa")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.5
+offset_top = 110.0
+offset_right = 198.5
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SFXLabel" type="Label" parent="SFXSlider"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.5
+offset_top = -62.0
+offset_right = 158.5
+offset_bottom = 5.0
+grow_horizontal = 2
+theme = ExtResource("1_t7e7n")
+theme_override_fonts/font = ExtResource("4_rvtqk")
+theme_override_font_sizes/font_size = 45
+text = "SOUND EFFECTS"
+
+[node name="AudioLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -107.0
+offset_right = 107.0
+offset_bottom = 89.5
+grow_horizontal = 2
+theme = ExtResource("1_t7e7n")
+theme_override_fonts/font = ExtResource("4_rvtqk")
+theme_override_font_sizes/font_size = 80
+text = "AUDIO"
+
+[connection signal="drag_ended" from="MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="drag_ended" from="SFXSlider" to="." method="_on_sfx_slider_drag_ended"]

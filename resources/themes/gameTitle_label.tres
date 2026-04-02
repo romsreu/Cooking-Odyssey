@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://1r2rv5410jtk"]
+
+[ext_resource type="FontFile" uid="uid://veolll0076aj" path="res://assets/fonts/go3v2.ttf" id="1_rjfie"]
+
+[resource]
+font = ExtResource("1_rjfie")
+font_size = 35
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)

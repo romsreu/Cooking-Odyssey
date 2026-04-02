@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnrndnslt265i"]
+
+[ext_resource type="Texture2D" uid="uid://cto3xop3rc62x" path="res://assets/images/ui/buttons/base/CloseButton.png" id="1_2whw0"]
+[ext_resource type="Script" uid="uid://cx31bssp283js" path="res://scripts/ui_elements/buttons/general_buttons/close_button.gd" id="2_j4dor"]
+
+[node name="CloseButton" type="Button"]
+offset_right = 133.0
+offset_bottom = 133.0
+icon = ExtResource("1_2whw0")
+flat = true
+expand_icon = true
+script = ExtResource("2_j4dor")

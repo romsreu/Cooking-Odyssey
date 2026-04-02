@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://rq6gudt8vaw5"]
+
+[ext_resource type="Shader" uid="uid://ebrpgdv67et6" path="res://resources/shaders/game_board.gdshader" id="1_kelw5"]
+[ext_resource type="Texture2D" uid="uid://bhldfhiq6jolf" path="res://assets/images/ui/panels/level_background.png" id="1_lfrn8"]
+[ext_resource type="Texture2D" uid="uid://b2ybh7ajslrvq" path="res://assets/images/ui/panels/game_grid.png" id="2_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://87aw3k7nkgyt" path="res://scenes/game/elements/game_grid.tscn" id="3_5i0tg"]
+[ext_resource type="Texture2D" uid="uid://sitm0vmi8os7" path="res://assets/images/ui/panels/CloudsNav.png" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://duv1di2pw13tf" path="res://scenes/ui/buttons/general_buttons/general_settings_button.tscn" id="6_5i0tg"]
+[ext_resource type="Texture2D" uid="uid://dnxeefe0q7rhm" path="res://assets/images/ui/panels/rect.png" id="6_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://tdvb18mjqw83" path="res://scenes/game/elements/profile_button.tscn" id="8_87uf6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sfkx"]
+shader = ExtResource("1_kelw5")
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_lfrn8")
+expand_mode = 1
+
+[node name="GameBoard" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_8sfkx")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -303.62042
+offset_right = 301.0
+offset_bottom = 303.62042
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lfrn8")
+expand_mode = 1
+
+[node name="GameGrid" parent="GameBoard" instance=ExtResource("3_5i0tg")]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004249292
+anchor_top = 0.033803623
+anchor_right = 0.9589235
+anchor_bottom = 0.9970889
+piece_size = Vector2(53, 53)
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 158.0
+grow_horizontal = 2
+
+[node name="TopPanel" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kelw5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control/TopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -24.5
+offset_right = 39.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rect" type="Sprite2D" parent="Control/TopPanel"]
+position = Vector2(344, 976.00006)
+scale = Vector2(0.2370801, 0.17261909)
+texture = ExtResource("6_bdhmt")
+
+[node name="SettingsButton" parent="." instance=ExtResource("6_5i0tg")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -140.0
+offset_right = 93.0
+offset_bottom = -58.80847
+grow_vertical = 0
+
+[node name="ProfileButton" parent="." instance=ExtResource("8_87uf6")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -223.0
+offset_top = 0.0
+offset_right = -7.6781006
+offset_bottom = 180.625
+grow_horizontal = 0
+grow_vertical = 1

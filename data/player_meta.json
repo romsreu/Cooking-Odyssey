@@ -1,0 +1,10 @@
+{
+  "coins": 1250,
+  "lives": 5,
+  "max_lives": 5,
+  "boosters": {
+	"bomb": 3,
+	"shuffle": 1
+  },
+  "last_level_played": 2
+}

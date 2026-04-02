@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5g7sokh33irw"]
+
+[ext_resource type="Shader" uid="uid://f1ejx3rvc1rk" path="res://resources/shaders/matches/ray.gdshader" id="1_0v7ix"]
+[ext_resource type="Script" uid="uid://b0ldvbypaor8f" path="res://scripts/utils/ray_fx.gd" id="2_161iq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_161iq"]
+shader = ExtResource("1_0v7ix")
+shader_parameter/progress = 0.0
+shader_parameter/is_horizontal = true
+shader_parameter/color_core = Color(1, 0.95, 0.4, 1)
+shader_parameter/color_glow = Color(1, 0.5, 0.1, 1)
+
+[node name="Rect" type="ColorRect"]
+material = SubResource("ShaderMaterial_161iq")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_161iq")

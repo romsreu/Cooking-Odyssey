@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://i1orrbktijf5"]
+
+[ext_resource type="Texture2D" uid="uid://cele588k07dyy" path="res://assets/images/ui/buttons/base/MusicToggleButton.png" id="1_yd8g8"]
+[ext_resource type="Script" uid="uid://djtsc07lx08wr" path="res://scripts/ui_elements/buttons/toggle_buttons/toggle_music_button.gd" id="2_mukon"]
+
+[node name="toggle_music_button" type="Button"]
+offset_right = 125.0
+offset_bottom = 132.0
+toggle_mode = true
+icon = ExtResource("1_yd8g8")
+flat = true
+expand_icon = true
+script = ExtResource("2_mukon")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn58sejlx8gtf"]
+
+[ext_resource type="Texture2D" uid="uid://bwh85srt1qt8j" path="res://assets/images/ui/buttons/base/SoundEffectsButton.png" id="1_1wynd"]
+[ext_resource type="Script" uid="uid://i8jlycuesbg4" path="res://scripts/ui_elements/buttons/toggle_buttons/toggle_sfx_button.gd" id="2_sicvy"]
+
+[node name="ToggleSFXButton" type="Button"]
+offset_right = 125.0
+offset_bottom = 132.0
+toggle_mode = true
+icon = ExtResource("1_1wynd")
+flat = true
+expand_icon = true
+script = ExtResource("2_sicvy")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

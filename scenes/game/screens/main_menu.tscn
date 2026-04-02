@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://2p6oiybfwr5m"]
+
+[ext_resource type="Script" uid="uid://disjyq8uvrscm" path="res://scripts/game/screens/main_menu.gd" id="1_vqkmt"]
+[ext_resource type="Texture2D" uid="uid://bg16lx4ast263" path="res://assets/images/main_menu/main_background.png" id="2_p4kif"]
+[ext_resource type="PackedScene" uid="uid://d2ks2vntr5btr" path="res://scenes/ui/buttons/general_buttons/custom_button.tscn" id="3_mxfbi"]
+[ext_resource type="Texture2D" uid="uid://cbp83brc6vgpf" path="res://assets/images/main_menu/cookingodyssey (1).png" id="3_p4kif"]
+[ext_resource type="PackedScene" uid="uid://duv1di2pw13tf" path="res://scenes/ui/buttons/general_buttons/general_settings_button.tscn" id="5_fh7oh"]
+[ext_resource type="Texture2D" uid="uid://cnfgaxm5gfsy6" path="res://assets/images/ui/buttons/base/settingTypeButton.png" id="5_p4kif"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ovsr"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vqkmt")
+
+[node name="GameSpace" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="GameSpace"]
+material = SubResource("ShaderMaterial_3ovsr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_p4kif")
+expand_mode = 1
+
+[node name="Logo" type="TextureRect" parent="GameSpace"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 60.0
+offset_right = 344.76398
+offset_bottom = 527.0
+grow_horizontal = 2
+texture = ExtResource("3_p4kif")
+expand_mode = 1
+
+[node name="PlayButton" parent="GameSpace" instance=ExtResource("3_mxfbi")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = 16.0
+offset_right = 203.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0217302, 1.0217302)
+pivot_offset = Vector2(203, 42)
+custom_texture = ExtResource("5_p4kif")
+label_text = "PLAY"
+idle_animation = true
+
+[node name="SettingsButton" parent="GameSpace" instance=ExtResource("5_fh7oh")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -123.0
+offset_top = 28.0
+offset_right = -25.5
+offset_bottom = 123.0
+grow_horizontal = 0
+
+[connection signal="pressed" from="GameSpace/PlayButton" to="." method="_on_play_button_pressed"]

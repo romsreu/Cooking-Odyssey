@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://3g4eqhugjyk1"]
+
+[ext_resource type="FontFile" uid="uid://i002glhq5wl0" path="res://assets/fonts/Super Cereal.ttf" id="1_6n8f7"]
+[ext_resource type="FontFile" uid="uid://veolll0076aj" path="res://assets/fonts/go3v2.ttf" id="1_112w8"]
+[ext_resource type="Texture2D" uid="uid://t33rskocxx7b" path="res://assets/images/ui/sliders/settings/sliderGrabber.png" id="2_oxab0"]
+[ext_resource type="Texture2D" uid="uid://dtrgqkpkmsdlp" path="res://assets/images/ui/sliders/settings/sliderFill.png" id="2_s0850"]
+[ext_resource type="Texture2D" uid="uid://dpwbero41u0gt" path="res://assets/images/ui/panels/panel.png" id="2_wdyip"]
+[ext_resource type="Texture2D" uid="uid://cutifs32k0yi" path="res://assets/images/ui/sliders/settings/sliderContainer.png" id="3_oxab0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6n8f7"]
+texture = ExtResource("2_s0850")
+expand_margin_top = 14.0
+expand_margin_bottom = 8.0
+region_rect = Rect2(474.289, 0, 1142.71, 57)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ogkjs"]
+texture = ExtResource("2_s0850")
+expand_margin_top = 14.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8xpl4"]
+texture = ExtResource("3_oxab0")
+expand_margin_left = 7.0
+expand_margin_top = 25.0
+expand_margin_right = 7.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_37jf7"]
+texture = ExtResource("2_wdyip")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cpdoe"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 72
+Button/fonts/font = ExtResource("1_6n8f7")
+HSlider/constants/grabber_offset = -3
+HSlider/icons/grabber = ExtResource("2_oxab0")
+HSlider/icons/grabber_highlight = ExtResource("2_oxab0")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_6n8f7")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_ogkjs")
+HSlider/styles/slider = SubResource("StyleBoxTexture_8xpl4")
+Label/colors/font_color = Color(0.992157, 0.584314, 0.447059, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 10
+Label/constants/shadow_outline_size = 10
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_112w8")
+Panel/styles/panel = SubResource("StyleBoxTexture_37jf7")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0.489622, 0.489622, 0.489622, 1)
+RichTextLabel/font_sizes/normal_font_size = 30
+RichTextLabel/fonts/normal_font = ExtResource("1_112w8")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_cpdoe")

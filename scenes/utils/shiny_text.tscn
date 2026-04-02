@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3jjx1st6jv0d"]
+
+[ext_resource type="Shader" uid="uid://bctlvau308d3u" path="res://resources/shaders/shiny_text.gdshader" id="1_c166r"]
+[ext_resource type="Theme" uid="uid://3g4eqhugjyk1" path="res://resources/themes/roarc_theme.tres" id="2_npohp"]
+[ext_resource type="Script" uid="uid://7y6j7uuil7ig" path="res://scripts/utils/shiny_label.gd" id="3_2f47m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tly7t"]
+shader = ExtResource("1_c166r")
+shader_parameter/shine_color = Color(1, 0.5568628, 0.023529412, 1)
+shader_parameter/shine_progress = 0.0
+shader_parameter/shine_size = 0.28999999351792005
+shader_parameter/shine_angle = 50.60000075400072
+shader_parameter/text_size = Vector2(100, 100)
+
+[node name="ShinyText" type="Label"]
+material = SubResource("ShaderMaterial_tly7t")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -45.0
+offset_right = 205.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_npohp")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "SHINY TEXT"
+script = ExtResource("3_2f47m")

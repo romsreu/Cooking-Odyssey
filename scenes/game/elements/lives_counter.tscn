@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://t8kva7c4gmhr"]
+
+[ext_resource type="Texture2D" uid="uid://v0f834s1tbv7" path="res://assets/images/ui/counters/lives_counter.png" id="1_2radl"]
+[ext_resource type="Script" uid="uid://dfu22g1tt3jy3" path="res://scripts/game/elements/lives_container.gd" id="2_4wacw"]
+[ext_resource type="Texture2D" uid="uid://b11b0efxoy3pr" path="res://assets/images/ui/buttons/base/PlusButton.png" id="3_3p4hf"]
+[ext_resource type="Script" uid="uid://b2he1blp5ob47" path="res://scripts/ui_elements/buttons/general_buttons/base_mobile_button.gd" id="4_pyvdi"]
+[ext_resource type="FontFile" uid="uid://veolll0076aj" path="res://assets/fonts/go3v2.ttf" id="5_hem7g"]
+
+[node name="LivesCounter" type="TextureRect"]
+offset_top = 6.0
+offset_right = 160.0
+offset_bottom = 60.0
+texture = ExtResource("1_2radl")
+expand_mode = 1
+script = ExtResource("2_4wacw")
+
+[node name="AddLifeButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -29.9595
+offset_right = 22.938995
+offset_bottom = 29.9595
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("3_3p4hf")
+flat = true
+expand_icon = true
+script = ExtResource("4_pyvdi")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[node name="LivesAmount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34375
+anchor_top = 0.182245
+anchor_right = 0.86875
+anchor_bottom = 0.7192821
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_hem7g")
+theme_override_font_sizes/font_size = 25
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="AddLifeButton" to="." method="_on_add_life_button_pressed"]

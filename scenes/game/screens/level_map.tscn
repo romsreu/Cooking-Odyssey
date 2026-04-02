@@ -1,0 +1,276 @@
+[gd_scene load_steps=20 format=3 uid="uid://bos2b5dyds6qn"]
+
+[ext_resource type="Script" uid="uid://b6jaslmbj1u14" path="res://scripts/game/screens/level_map.gd" id="1_8te6h"]
+[ext_resource type="PackedScene" uid="uid://bxw8m12vqma3v" path="res://scenes/systems/level_selector.tscn" id="2_ykoje"]
+[ext_resource type="Script" uid="uid://b2he1blp5ob47" path="res://scripts/ui_elements/buttons/general_buttons/base_mobile_button.gd" id="3_7823y"]
+[ext_resource type="Texture2D" uid="uid://cvda8dl8spkv6" path="res://assets/images/ui/buttons/base/shop_button.png" id="4_xn0wb"]
+[ext_resource type="FontFile" uid="uid://veolll0076aj" path="res://assets/fonts/go3v2.ttf" id="5_8gdj2"]
+[ext_resource type="Texture2D" uid="uid://c845p2mvjav44" path="res://assets/images/ui/buttons/base/ranking_button.png" id="6_cefy1"]
+[ext_resource type="Texture2D" uid="uid://c5x3odp2mfrv5" path="res://assets/images/ui/buttons/base/events_button.png" id="7_jluh2"]
+[ext_resource type="Shader" uid="uid://ccfppqney66by" path="res://resources/shaders/TopNavShadow.gdshader" id="8_5q4gu"]
+[ext_resource type="Texture2D" uid="uid://sitm0vmi8os7" path="res://assets/images/ui/panels/CloudsNav.png" id="9_xl65b"]
+[ext_resource type="PackedScene" uid="uid://duv1di2pw13tf" path="res://scenes/ui/buttons/general_buttons/general_settings_button.tscn" id="10_lkuov"]
+[ext_resource type="PackedScene" uid="uid://tdvb18mjqw83" path="res://scenes/game/elements/profile_button.tscn" id="11_p6sha"]
+[ext_resource type="PackedScene" uid="uid://t8kva7c4gmhr" path="res://scenes/game/elements/lives_counter.tscn" id="14_1qmhg"]
+[ext_resource type="PackedScene" uid="uid://d0px8b7kcr4d7" path="res://scenes/game/elements/coins_counter.tscn" id="15_a5mhp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_odgbi"]
+
+[sub_resource type="Gradient" id="Gradient_3ovsr"]
+colors = PackedColorArray(0, 0.2833333, 0.5, 1, 0.74808574, 0.99984366, 0.63677317, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gck7w"]
+gradient = SubResource("Gradient_3ovsr")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk5ny"]
+bg_color = Color(0.07994526, 0.12999919, 0.1910681, 1)
+
+[sub_resource type="Theme" id="Theme_6gfpv"]
+Panel/styles/panel = SubResource("StyleBoxFlat_fk5ny")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlvtu"]
+shader = ExtResource("8_5q4gu")
+shader_parameter/shadow_color = Color(0.120934956, 0.82922673, 0.8643806, 1)
+shader_parameter/shadow_height = 0.1470000069825
+shader_parameter/shadow_softness = 0.594000028215
+
+[node name="LevelMap" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8te6h")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_odgbi")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_gck7w")
+
+[node name="LevelsSection" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.119444445
+anchor_right = 0.99722224
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelSelector" parent="LevelsSection" instance=ExtResource("2_ykoje")]
+layout_mode = 1
+
+[node name="BottomNav" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_6gfpv")
+metadata/_edit_group_ = true
+
+[node name="ShopButton" type="Button" parent="BottomNav"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -55.5
+offset_right = 240.0
+offset_bottom = 55.5
+grow_vertical = 2
+script = ExtResource("3_7823y")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[node name="ShopTexture" type="TextureRect" parent="BottomNav/ShopButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_xn0wb")
+expand_mode = 1
+
+[node name="ShopLabel" type="Label" parent="BottomNav/ShopButton"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -24.5
+offset_right = 110.0
+offset_bottom = 26.5
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.021156352, 0.33160937, 0.5630199, 0.7490196)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("5_8gdj2")
+theme_override_font_sizes/font_size = 45
+text = "SHOP"
+
+[node name="RankingButton" type="Button" parent="BottomNav"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -55.5
+offset_right = 119.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_7823y")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[node name="RankingTexture" type="TextureRect" parent="BottomNav/RankingButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_cefy1")
+expand_mode = 1
+
+[node name="RankingLabel" type="Label" parent="BottomNav/RankingButton"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0.92, 0, 0.9046665, 0.44705883)
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("5_8gdj2")
+theme_override_font_sizes/font_size = 32
+text = "RANKING"
+
+[node name="EventsButton" type="Button" parent="BottomNav"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -55.5
+offset_bottom = 55.5
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("3_7823y")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[node name="EventsTexture" type="TextureRect" parent="BottomNav/EventsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_jluh2")
+expand_mode = 1
+
+[node name="EventsLabel" type="Label" parent="BottomNav/EventsButton"]
+layout_mode = 1
+offset_left = 4.0
+offset_right = 120.0
+offset_bottom = 40.0
+theme_override_colors/font_shadow_color = Color(0.7947768, 0.4695856, 9.62615e-07, 1)
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("5_8gdj2")
+theme_override_font_sizes/font_size = 32
+text = "EVENTS"
+
+[node name="TopNavFill" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0.9098039, 0.9529412, 0.99215686, 1)
+
+[node name="TopNav" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_tlvtu")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.18703704
+grow_horizontal = 2
+texture = ExtResource("9_xl65b")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GeneralSettingsButton" parent="TopNav" instance=ExtResource("10_lkuov")]
+self_modulate = Color(0.8118375, 0.8118375, 0.8118375, 1)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -64.0
+offset_right = -22.0
+offset_bottom = 29.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ProfileButton" parent="TopNav" instance=ExtResource("11_p6sha")]
+layout_mode = 0
+anchors_preset = 0
+
+[node name="Counters" type="Control" parent="TopNav"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -74.0
+offset_right = 172.0
+offset_bottom = 36.0
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="LivesCounter" parent="TopNav/Counters" instance=ExtResource("14_1qmhg")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 0.0
+offset_right = 80.0
+offset_bottom = 54.0
+grow_horizontal = 2
+
+[node name="CoinsCounter" parent="TopNav/Counters" instance=ExtResource("15_a5mhp")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -54.0
+offset_right = 80.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0

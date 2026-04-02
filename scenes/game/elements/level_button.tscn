@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://c30k6yanvru6a"]
+
+[ext_resource type="Script" uid="uid://cgcq2noletj8j" path="res://scripts/game/elements/level_button.gd" id="1_gva0i"]
+[ext_resource type="Texture2D" uid="uid://d2mracan2xyyg" path="res://assets/images/ui/buttons/levels/orange_button.png" id="2_vl5ua"]
+[ext_resource type="FontFile" uid="uid://veolll0076aj" path="res://assets/fonts/go3v2.ttf" id="3_i7jq8"]
+[ext_resource type="PackedScene" uid="uid://kykq1ony6e7q" path="res://scenes/game/elements/stars_container.tscn" id="4_y1gdj"]
+[ext_resource type="Texture2D" uid="uid://decjiwobbfi5g" path="res://assets/images/ui/utils/locked.png" id="5_8k2re"]
+
+[node name="LevelButton" type="Button"]
+offset_right = 102.54199
+offset_bottom = 101.0
+pivot_offset = Vector2(51.270996, 50.5)
+focus_mode = 0
+flat = true
+script = ExtResource("1_gva0i")
+metadata/_custom_type_script = "uid://b2he1blp5ob47"
+
+[node name="LevelButtonTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vl5ua")
+expand_mode = 1
+
+[node name="LevelNumberLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_top = -20.0
+offset_right = 0.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_i7jq8")
+theme_override_font_sizes/font_size = 35
+
+[node name="StarsContainer" parent="." instance=ExtResource("4_y1gdj")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 0.0
+offset_top = -35.5
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+
+[node name="LockIcon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(52, 68.75)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -34.375
+offset_right = 26.0
+offset_bottom = 34.375
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8k2re")
+expand_mode = 1
